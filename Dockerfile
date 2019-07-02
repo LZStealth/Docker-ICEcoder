@@ -8,4 +8,6 @@ curl -o /icecoder.zip 'https://icecoder.net/download-zip?version=6.0' && \
 unzip -q /icecoder.zip -d /tmp/ && \
 cp -r /tmp/ICE* /var/www/html/ICEcoder && \
 chown -R www-data.www-data /var/www/html/ICEcoder && \
-rm -rf /icecoder.zip /tmp/ICE*
+rm -rf /icecoder.zip /tmp/ICE* \
+cd /var/www/html \
+chmod 757 {backups,lib,plugins,test,tmp}
