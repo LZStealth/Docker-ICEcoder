@@ -13,7 +13,7 @@ RUN apt-get update \
     && docker-php-ext-install -j$(nproc) gd \
     && apt-get clean all \
     && curl -fSL "https://icecoder.net/download-zip?version=$VERSION"  \
-    && unzip -q /icecoder v$VERSION.zip -d /tmp/ \
+    && unzip -q "/icecoder v$VERSION.zip" -d /tmp/ \
     && cp -r /tmp/ICE* /var/www/html/ICEcoder \
     && chown -R www-data.www-data /var/www/html/ICEcoder \
     && rm -rf /icecoder.zip /tmp/ICE* \
