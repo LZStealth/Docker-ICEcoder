@@ -1,7 +1,7 @@
 FROM php:7.2-apache
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV VERSION=6.0
+ENV VERSION=7.0
 
 RUN apt-get update \
     && apt-get install -y unzip \
@@ -12,7 +12,7 @@ RUN apt-get update \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j$(nproc) gd \
     && apt-get clean all \
-    && curl -o /icecoder.zip 'https://icecoder.net/download-zip?version=6.0' \
+    && curl -o /icecoder.zip 'https://icecoder.net/download-zip?version=${VERSION}'  \
     && unzip -q /icecoder.zip -d /tmp/ \
     && cp -r /tmp/ICE* /var/www/html/ICEcoder \
     && chown -R www-data.www-data /var/www/html/ICEcoder \
