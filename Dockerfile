@@ -20,6 +20,6 @@ RUN curl -o /icecoder.zip "https://icecoder.net/download-zip?version=7.0"
 RUN unzip -q "/icecoder.zip" -d /tmp/
 RUN cp -r /tmp/ICE* /var/www/html/ICEcoder
 RUN chown -R www-data:www-data /var/www/html
-RUN rm -rf /icecoder.zip /tmp/ICE* \
-    cd /var/www/html/ICEcoder \
-    chmod 757 {backups,lib,plugins,test,tmp}
+RUN rm -rf /icecoder.zip /tmp/ICE*
+RUN cd /var/www/html/ICEcoder
+RUN chmod 757 {backups,lib,plugins,test,tmp}
