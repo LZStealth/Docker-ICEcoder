@@ -16,7 +16,7 @@ RUN apt-get update \
     && docker-php-ext-configure mysqli --with-mysqli=mysqlnd \
     && docker-php-ext-install mysqli \
     && apt-get clean all
-RUN curl -o /icecoder.zip "https://icecoder.net/download-zip?version=7.0" 
+RUN curl -o /icecoder.zip "https://icecoder.net/download-zip" 
 RUN unzip -q "/icecoder.zip" -d /tmp/
 RUN cp -r /tmp/ICE* /var/www/html/ICEcoder
 RUN chown -R www-data:www-data /var/www/html
